@@ -1,10 +1,24 @@
 <div class="top-menu">
-  <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+  <img
+    class="logo"
+    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
+  />
 </div>
 
 <div class="courses">
-  @for (course of courses; track course.id) {
-  <app-course-card [course]="course" (courseView)="onCourseList($event)"></app-course-card>
+  @for (course of courses; track course.id; let index = $index; let first =
+  $first; let last = $last; let even = $even; let odd = $odd) {
+  <app-course-card
+    [index]="index"
+    [course]="course"
+    (courseView)="onCourseList($event)"
+    [class.is-even]="even"
+    [class.is-odd]="odd"
+    [class.is-first]="first"
+    [class.is-last]="last"
+  ></app-course-card>
+  } @empty {
+  <h1>Course not found !!</h1>
   }
 </div>
 

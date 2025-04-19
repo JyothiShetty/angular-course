@@ -6,15 +6,15 @@ import { Course } from '../course';
   standalone: true,
   imports: [],
   templateUrl: './course-card.component.html',
-  styleUrl: './course-card.component.css'
+  styleUrl: './course-card.component.css',
 })
 export class CourseCardComponent {
   @Input() course!: Course;
+  @Input({required: true}) index!: number;
   @Output() courseView = new EventEmitter<any>();
- 
 
   onCourseView() {
     this.courseView.emit(this.course);
-    console.log('btn click')
+    console.log('btn click');
   }
 }
