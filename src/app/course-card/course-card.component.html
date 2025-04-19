@@ -1,0 +1,10 @@
+<div class="course-card">
+    <div class="course-title">
+        {{ course.description }}
+    </div>
+    <img [src]="course.iconUrl" alt="Angular logo" width="300">
+    <div class="course-description">
+        {{ course.longDescription }}
+    </div>
+    <button class=" btn btn-primary mt-2" (click)="onCourseView()">View Course</button>
+</div>
